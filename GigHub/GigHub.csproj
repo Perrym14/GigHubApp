@@ -213,6 +213,18 @@
     <Compile Include="Migrations\201810211450104_PoulateGenresTable.Designer.cs">
       <DependentUpon>201810211450104_PoulateGenresTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810212043175_AddForeignKeyPropertiesToGig.cs" />
+    <Compile Include="Migrations\201810212043175_AddForeignKeyPropertiesToGig.Designer.cs">
+      <DependentUpon>201810212043175_AddForeignKeyPropertiesToGig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810212145035_AttemptFixGenre.cs" />
+    <Compile Include="Migrations\201810212145035_AttemptFixGenre.Designer.cs">
+      <DependentUpon>201810212145035_AttemptFixGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810212208406_FKReplace.cs" />
+    <Compile Include="Migrations\201810212208406_FKReplace.Designer.cs">
+      <DependentUpon>201810212208406_FKReplace.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -311,6 +323,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810211450104_PoulateGenresTable.resx">
       <DependentUpon>201810211450104_PoulateGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810212043175_AddForeignKeyPropertiesToGig.resx">
+      <DependentUpon>201810212043175_AddForeignKeyPropertiesToGig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810212145035_AttemptFixGenre.resx">
+      <DependentUpon>201810212145035_AttemptFixGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810212208406_FKReplace.resx">
+      <DependentUpon>201810212208406_FKReplace.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

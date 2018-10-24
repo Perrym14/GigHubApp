@@ -22,3 +22,71 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
+
+/* BootStrap Overrides*/
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #101010;
+    background-color: #fe433c;
+}
+
+.navbar-inverse {
+    background-color: #fe433c;
+    border-color: #080808;
+    border-color: #f9ebeb;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-brand {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: KoHo, Helvetica, Arial, sans-serif;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    font-size: 17px;
+    padding: 20px 15px;
+    -ms-border-radius: 14px;
+    border-radius: 14px;
+}
+
+label {
+    font-size: medium;
+}
+
+.btn {
+    padding: 7px 20px;
+    font-size: 17px;
+    -ms-border-radius: 17px;
+    border-radius: 17px;
+}

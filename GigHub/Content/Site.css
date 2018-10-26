@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 90px;
     padding-bottom: 20px;
 }
 
@@ -90,3 +90,51 @@ label {
     -ms-border-radius: 17px;
     border-radius: 17px;
 }
+
+/* Page-level styles */
+
+.gigs > li {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.gigs > li .details {
+    position: absolute;
+    top: 0;
+    left: 70px;
+}
+
+.gigs {
+    list-style: none;
+}
+
+.gigs > li .date {
+    background: red;
+    color: white;
+    text-align: center;
+    width: 60px;
+    border-radius: 7px;
+}
+
+.gigs > li .date .month {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 6px;
+
+}
+
+.gigs > li .date .day {
+    background: whitesmoke;
+    color: #080808;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 6px 12px;
+}
+
+.gigs > li .details .artist {
+    font-weight: bold;
+    display: block;
+}
+
+

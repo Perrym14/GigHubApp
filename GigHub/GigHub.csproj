@@ -225,16 +225,22 @@
     <Compile Include="Migrations\201810212208406_FKReplace.Designer.cs">
       <DependentUpon>201810212208406_FKReplace.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810261726528_AddNameToApplicationUser.cs" />
+    <Compile Include="Migrations\201810261726528_AddNameToApplicationUser.Designer.cs">
+      <DependentUpon>201810261726528_AddNameToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Gig.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\FutureDate.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\ValidTime.cs" />
     <Compile Include="ViewModels\GigFormViewModel.cs" />
   </ItemGroup>
@@ -334,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810212208406_FKReplace.resx">
       <DependentUpon>201810212208406_FKReplace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810261726528_AddNameToApplicationUser.resx">
+      <DependentUpon>201810261726528_AddNameToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

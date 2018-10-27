@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace GigHub.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private ApplicationDbContext _context;

@@ -37,6 +37,7 @@ namespace GigHub.Controllers
 
             return View("Gigs", viewModel);
         }
+      
 
         [Authorize]
         public ActionResult Create()

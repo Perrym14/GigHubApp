@@ -82,7 +82,7 @@ h6,
 
 .form-control {
     font-size: 17px;
-    padding: 20px 15px;
+    Height: 44px;
     -ms-border-radius: 14px;
     border-radius: 14px;
 }
@@ -141,6 +141,15 @@ label {
 
 .gigs > li .details .artist {
     font-weight: bold;
+    display: block;
+}
+
+.gigs > li .actions {
+    font-size: 15px;
+    display: none;
+}
+
+.gigs > li:hover .actions {
     display: block;
 }
 

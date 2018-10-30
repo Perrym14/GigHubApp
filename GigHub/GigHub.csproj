@@ -205,9 +205,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AttendancesController.cs" />
-    <Compile Include="Controllers\FolloweesController.cs" />
+    <Compile Include="Controllers\Api\AttendancesController.cs" />
+    <Compile Include="Controllers\Api\FolloweesController.cs" />
     <Compile Include="Controllers\FollowingController.cs" />
+    <Compile Include="Controllers\Api\CancelgigsController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -252,6 +253,10 @@
     <Compile Include="Migrations\201810272040105_AddFollowing.Designer.cs">
       <DependentUpon>201810272040105_AddFollowing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810291555217_AddIsCanceledToGig.cs" />
+    <Compile Include="Migrations\201810291555217_AddIsCanceledToGig.Designer.cs">
+      <DependentUpon>201810291555217_AddIsCanceledToGig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Following.cs" />
@@ -271,6 +276,7 @@
     <Compile Include="ViewModels\GigFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -378,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810272040105_AddFollowing.resx">
       <DependentUpon>201810272040105_AddFollowing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810291555217_AddIsCanceledToGig.resx">
+      <DependentUpon>201810291555217_AddIsCanceledToGig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

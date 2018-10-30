@@ -9,9 +9,6 @@ namespace GigHub
         {
             config.MapHttpAttributeRoutes();
 
-            //routes.MapHttpRoute("RestApiRoute", "Api/{controller}/{id}", new { id = RouteParameter.Optional }, new { id = @"\d+" }); //this replaces your current api route
-
-
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using GigHub.Models;
 using Microsoft.AspNet.Identity;
 
-namespace GigHub.Controllers
+namespace GigHub.Controllers.Api
 {
     public class FolloweesController : Controller
     {

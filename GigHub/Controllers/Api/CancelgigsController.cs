@@ -39,13 +39,7 @@ namespace GigHub.Controllers.Api
 
             foreach (var attendee in attendees)
             {
-                var userNotification = new UserNotification
-                {
-                    User = attendee,
-                    Type = notification
-                };
-
-                _context.UserNotifications.Add(userNotification);
+                attendee.Notify(notification);
             }
             _context.SaveChanges();
 

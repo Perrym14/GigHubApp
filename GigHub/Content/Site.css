@@ -55,6 +55,17 @@ textarea {
     color: white;
 }
 
+.navbar-inverse .notfications {
+        position: relative;
+    }
+
+ .navbar-inverse .notfications .badge {
+            position: absolute;
+            top: 8px;
+            right: 0;
+     background: darkred;
+        }
+
 .navbar-brand {
     font-size: 19px;
     font-weight: bold;

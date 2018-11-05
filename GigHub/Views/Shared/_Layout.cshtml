@@ -39,5 +39,27 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+<script>
+    $(document).ready(function() {
+        $.getJSON("/api/notifications",
+            function(notifications) {
+                $(".js-notifications-count")
+                    .text(notifications.length)
+                    .removeClass("hide")
+                    .addClass("animated zoomIn");
+            });
+        $(".notfications").popover({
+            html: true,
+            title: "Notifications",
+            content: function() {
+                var compiled = _.template("Hello <%= name %>");
+                var html = compiled({ name: "Dude" });
+                return html;
+            },
+            placement: "bottom"
+        });
+    });
+</script>
 </body>
 </html>

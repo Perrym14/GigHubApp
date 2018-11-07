@@ -2,8 +2,25 @@
 @{
     ViewBag.Title = "Home Page";
 }
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
 <h1>@Model.Heading</h1>
-<ul class ="gigs voffset4">
+@using (Html.BeginForm("Search", "Gigs"))
+{
+    <div class="form-group">
+        <div id="searchGigs" class="input-group">
+            @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control" })
+            <span class="input-group-addon">
+                <i class="fa fa-search"></i>
+            </span>
+        </div>
+
+    </div>
+
+}
+<ul class="gigs voffset4">
     @foreach (var gig in Model.UpcomingGigs)
     {
         <li>
@@ -18,10 +35,10 @@
             <div class="details">
                 <span class="artist">
                     @gig.Artist.Name
-                    
+
                     @if (gig.IsCanceled)
                     {
-                        <span class ="label label-warning">Canceled</span>
+                        <span class="label label-warning">Canceled</span>
                     }
 
                     @if (Model.ShowActions)
@@ -45,29 +62,29 @@
 @section scripts
 {
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $(".js-toggle-attendance").click(function (e) {
                 var button = $(e.target);
                 $.post("/api/attendances", { gigId: button.attr("data-gig-id") })
-                    .done(function() {
+                    .done(function () {
                         button
                             .removeClass("btn-default")
                             .addClass("btn-info")
                             .text("Going");
                     })
-                    .fail(function() {
+                    .fail(function () {
                         alert("Something failed!");
                     });
             });
 
-            $(".js-toggle-follow").click(function(e) {
+            $(".js-toggle-follow").click(function (e) {
                 var button = $(e.target);
                 $.post("api/following", { followeeId: button.attr("data-user-id") })
-                    .done(function() {
+                    .done(function () {
                         button
                             .text("Following");
                     })
-                    .fail(function() {
+                    .fail(function () {
                         alert("Something failed!");
                     });
             });

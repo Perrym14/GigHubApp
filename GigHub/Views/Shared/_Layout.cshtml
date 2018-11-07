@@ -80,24 +80,30 @@
             if (notifications.length === 0)
                 return;
 
-                $(".js-notifications-count")
-                    .text(notifications.length)
-                    .removeClass("hide")
-                    .addClass("animated zoomIn");
+            $(".js-notifications-count")
+                .text(notifications.length)
+                .removeClass("hide")
+                .addClass("animated zoomIn");
 
-                $(".notfications").popover({
-                    html: true,
-                    title: "Notifications",
-                    content: function() {
-                        var compiled = _.template($("#notifications-template").html());
-                        return compiled({ notifications: notifications });
-                
-                    },
-                    placement: "bottom",
-                    template: '<div class="popover popover-notifications"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
-                });
-
+            $(".notfications").popover({
+                html: true,
+                title: "Notifications",
+                content: function() {
+                    var compiled = _.template($("#notifications-template").html());
+                    return compiled({ notifications: notifications });               
+                },
+                placement: "bottom",
+                template: '<div class="popover popover-notifications"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+            }).on("shown.bs.popover", function() {
+                $.post("/api/notifications/markAsRead")
+                    .done(function() {
+                        $(".js-notifications-count")
+                            .text("")
+                            .addClass("hide");
+                    });
             });
+
+        });
     });
 </script>
 </body>

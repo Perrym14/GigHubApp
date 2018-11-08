@@ -1,4 +1,5 @@
-﻿@model  GigHub.ViewModels.GigsViewModel
+﻿@using System.Web.UI.WebControls
+@model  GigHub.ViewModels.GigsViewModel
 @{
     ViewBag.Title = "Home Page";
 }
@@ -11,7 +12,7 @@
 {
     <div class="form-group">
         <div id="searchGigs" class="input-group">
-            @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control", placeholder = "Search by artist, genre..." })
             <span class="input-group-addon">
                 <i class="fa fa-search"></i>
             </span>
@@ -34,7 +35,8 @@
             </div>
             <div class="details">
                 <span class="artist">
-                    @gig.Artist.Name
+                    <a href="@Url.Action("Details", "Gigs", new{id = gig.Id})">@gig.Artist.Name</a>
+                        
 
                     @if (gig.IsCanceled)
                     {

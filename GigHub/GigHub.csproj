@@ -224,7 +224,7 @@
     <Compile Include="Dto\GigDto.cs" />
     <Compile Include="Dto\NotificationDto.cs" />
     <Compile Include="Controllers\Api\NotificationsController.cs" />
-    <Compile Include="Controllers\FollowingController.cs" />
+    <Compile Include="Controllers\Api\FollowingController.cs" />
     <Compile Include="Controllers\Api\CancelgigsController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -313,8 +313,10 @@
     </Content>
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\controllers\followingsController.js" />
     <Content Include="Scripts\app\controllers\gigsController.js" />
     <Content Include="Scripts\app\services\attendanceService.js" />
+    <Content Include="Scripts\app\services\followingService.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

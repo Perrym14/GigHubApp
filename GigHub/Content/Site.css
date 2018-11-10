@@ -147,6 +147,8 @@ label {
 }
 .gigs > li .details .genre {
   font-size: 15px;
+  display: block;
+  margin-bottom: 4px;
 }
 .gigs > li .actions {
   font-size: 15px;

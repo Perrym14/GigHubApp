@@ -1,8 +1,9 @@
-﻿using GigHub.Dto;
-using GigHub.Models;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using System.Linq;
 using System.Web.Http;
+using GigHub.Core.Dto;
+using GigHub.Core.Models;
+using GigHub.Persistence;
 
 namespace GigHub.Controllers.Api
 {

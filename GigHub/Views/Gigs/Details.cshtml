@@ -1,15 +1,16 @@
-﻿@using GigHub.Models
-@model GigHub.ViewModels.GigDetailsViewModel
+﻿@model GigHub.ViewModels.GigDetailsViewModel
+
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>@Model.Gig.Artist.Name
+    
     @if (User.Identity.IsAuthenticated)
     {
         if(Model.IsFollowing)
-         {
+        {
              <button class="btn btn-info js-toggle-follow" data-user-id="@Model.Gig.ArtistId">Following</button>
          }
         else
@@ -18,7 +19,7 @@
 
         }
 
-    }
+     }
 </h2>
 <p> Performing at the @Model.Gig.Venue on @Model.Gig.DateTime.ToString("d MMM") at @Model.Gig.DateTime.ToString("HH:mm")</p>
 @if (@Model.IsAttending && User.Identity.IsAuthenticated)

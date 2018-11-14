@@ -1,8 +1,8 @@
-﻿using System;
+﻿using GigHub.Core.Models;
+using GigHub.Core.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using GigHub.Core.Models;
-using GigHub.Core.Repositories;
 
 namespace GigHub.Persistence.Repositories
 {
@@ -26,6 +26,23 @@ namespace GigHub.Persistence.Repositories
         {
             return _context.Attendances
                 .SingleOrDefault(a => a.AttendeeId == userId && a.GigId == gigId);
+        }
+
+        public void AddAttendance(Attendance attendance)
+        {
+            _context.Attendances.Add(attendance);
+
+        }
+
+        public void RemoveAttendance(Attendance attendance)
+        {
+            _context.Attendances.Remove(attendance);
+        }
+
+        public bool AnyAttendances(string userId, int gigId)
+        {
+            return _context.Attendances
+                .Any(a => a.AttendeeId == userId && a.GigId == gigId);
         }
 
 

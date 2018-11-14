@@ -4,6 +4,7 @@ using GigHub.Persistence;
 using Microsoft.AspNet.Identity;
 using System.Linq;
 using System.Web.Mvc;
+using GigHub.Core.Repositories;
 
 namespace GigHub.Controllers
 {

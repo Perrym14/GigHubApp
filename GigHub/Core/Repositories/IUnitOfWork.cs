@@ -1,6 +1,4 @@
-﻿using GigHub.Core.Repositories;
-
-namespace GigHub.Persistence
+﻿namespace GigHub.Core.Repositories
 {
     public interface IUnitOfWork
     {
@@ -8,6 +6,7 @@ namespace GigHub.Persistence
         IAttendanceRepository Attendances { get; }
         IGenreRepository Genres { get; }
         IFollowingRepository Followings { get; }
+        INotificationsRepository Notifications { get; }
         void Complete();
     }
 }

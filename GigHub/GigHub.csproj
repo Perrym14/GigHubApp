@@ -253,7 +253,7 @@
     <Compile Include="Core\Dto\NotificationDto.cs" />
     <Compile Include="Controllers\Api\NotificationsController.cs" />
     <Compile Include="Controllers\Api\FollowingController.cs" />
-    <Compile Include="Controllers\Api\CancelgigsController.cs" />
+    <Compile Include="Controllers\Api\CancelGigsController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -263,6 +263,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Persistence\EntityConfigurations\ApplicationUserConfig.cs" />
+    <Compile Include="Persistence\EntityConfigurations\AttendanceConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\FollowingConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\GenreConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\GigConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\NotificationConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\UserNotificationConfiguration.cs" />
     <Compile Include="Persistence\Migrations\201810202344185_CreateGigTable.cs" />
     <Compile Include="Persistence\Migrations\201810202344185_CreateGigTable.Designer.cs">
       <DependentUpon>201810202344185_CreateGigTable.cs</DependentUpon>
@@ -313,7 +320,9 @@
     <Compile Include="Core\Models\Notification.cs" />
     <Compile Include="Core\Models\NotificationType.cs" />
     <Compile Include="Core\Models\UserNotification.cs" />
-    <Compile Include="Persistence\IUnitOfWork.cs" />
+    <Compile Include="Core\Repositories\IUnitOfWork.cs" />
+    <Compile Include="Core\Repositories\INotificationsRepository.cs" />
+    <Compile Include="Persistence\Repositories\NotificationsRepository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Persistence\Repositories\AttendanceRepository.cs" />
     <Compile Include="Persistence\Repositories\FollowingRepository.cs" />

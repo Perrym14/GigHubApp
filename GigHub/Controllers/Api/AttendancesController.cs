@@ -1,9 +1,8 @@
 ﻿using GigHub.Core.Dto;
 using GigHub.Core.Models;
-using GigHub.Persistence;
+using GigHub.Core.Repositories;
 using Microsoft.AspNet.Identity;
 using System.Web.Http;
-using GigHub.Core.Repositories;
 
 namespace GigHub.Controllers.Api
 {
@@ -17,17 +16,16 @@ namespace GigHub.Controllers.Api
             _iUnitOfWork = unitOfWork;
         }
 
-        [System.Web.Http.HttpPost]
+        [HttpPost]
         public IHttpActionResult Attend(AttendanceDto dto)
         {
             var userId = User.Identity.GetUserId();
 
-            if (_iUnitOfWork.Attendances.AnyAttendances(userId, dto.GigId))
-            {
+            var attendance = _iUnitOfWork.Attendances.GetAttendance(userId, dto.GigId);
+            if (attendance != null)
                 return BadRequest("The attendance already exists");
-            }
 
-            var attendance = new Attendance
+            attendance = new Attendance
             {
                 GigId = dto.GigId,
                 AttendeeId = userId

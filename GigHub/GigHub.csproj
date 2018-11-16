@@ -279,6 +279,7 @@
     <Compile Include="Persistence\EntityConfigurations\GigConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\NotificationConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\UserNotificationConfiguration.cs" />
+    <Compile Include="Persistence\IApplicationDbContext.cs" />
     <Compile Include="Persistence\Migrations\201810202344185_CreateGigTable.cs" />
     <Compile Include="Persistence\Migrations\201810202344185_CreateGigTable.Designer.cs">
       <DependentUpon>201810202344185_CreateGigTable.cs</DependentUpon>

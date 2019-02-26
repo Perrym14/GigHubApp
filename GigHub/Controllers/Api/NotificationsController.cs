@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
 using GigHub.Core.Dto;
 using GigHub.Core.Models;
-using GigHub.Persistence;
+using GigHub.Core.Repositories;
 using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-using GigHub.Core.Repositories;
 
 namespace GigHub.Controllers.Api
 {
+    [Authorize]
     public class NotificationsController : ApiController
     {
         private readonly IUnitOfWork _iUnitOfWork;
@@ -20,24 +20,24 @@ namespace GigHub.Controllers.Api
             _iUnitOfWork = iUnitOfWork;
         }
 
-        public IEnumerable<NotificationDto> GetNotifications()
+        public IEnumerable<NotificationDto> GetNewNotifications()
         {
-            var userId = User.Identity.GetUserId();
-            var notifications = _iUnitOfWork.Notifications.GetUnreadNotifications(userId);
 
+            var userId = User.Identity.GetUserId();
+            var notifications = _iUnitOfWork.Notifications.GetNewNotificationsFor(userId);
             return notifications.Select(Mapper.Map<Notification, NotificationDto>);
 
-        }
 
+        }
 
         [HttpPost]
         public IHttpActionResult MarkAsRead()
         {
             var userId = User.Identity.GetUserId();
             var notifications =
-                _iUnitOfWork.Notifications.GetUnreadUserNotifications(userId);
+                _iUnitOfWork.UserNotifications.GetUserNotifications(userId);
 
-            notifications.ForEach(n => n.MarkRead());
+            notifications.ForEach(n => n.Read());
 
             _iUnitOfWork.Complete();
 

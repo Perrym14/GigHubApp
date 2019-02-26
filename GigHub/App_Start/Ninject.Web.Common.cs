@@ -1,3 +1,5 @@
+using System.Web.Http;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(GigHub.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(GigHub.App_Start.NinjectWebCommon), "Stop")]
 
@@ -10,6 +12,7 @@ namespace GigHub.App_Start
     using Ninject.Web.Common.WebHost;
     using System;
     using System.Web;
+    using WebApiContrib.IoC.Ninject;
 
     public static class NinjectWebCommon
     {
@@ -46,7 +49,16 @@ namespace GigHub.App_Start
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
                 RegisterServices(kernel);
 
-                kernel.Bind(x => { x.FromThisAssembly().SelectAllClasses().BindDefaultInterface(); });
+                //Fixed 500 internal server- "An error occured when
+                //trying to create controller of type_____"
+                GlobalConfiguration.Configuration.DependencyResolver = new NinjectResolver(kernel);
+
+                kernel.Bind(x =>
+                {
+                    x.FromThisAssembly()
+                        .SelectAllClasses()
+                        .BindDefaultInterface();
+                });
 
                 return kernel;
             }

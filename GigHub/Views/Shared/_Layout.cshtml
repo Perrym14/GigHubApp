@@ -78,7 +78,7 @@
 <script>
     $(document).ready(function() {
         $.getJSON("/api/notifications", function (notifications) {
-            if (notifications.length === 0)
+            if (notifications.length == 0)
                 return;
 
             $(".js-notifications-count")
@@ -86,7 +86,7 @@
                 .removeClass("hide")
                 .addClass("animated zoomIn");
 
-            $(".notfications").popover({
+            $(".notifications").popover({
                 html: true,
                 title: "Notifications",
                 content: function() {

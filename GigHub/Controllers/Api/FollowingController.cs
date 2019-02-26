@@ -1,9 +1,8 @@
 ﻿using GigHub.Core.Dto;
 using GigHub.Core.Models;
-using GigHub.Persistence;
+using GigHub.Core.Repositories;
 using Microsoft.AspNet.Identity;
 using System.Web.Http;
-using GigHub.Core.Repositories;
 
 namespace GigHub.Controllers.Api
 {
@@ -22,11 +21,13 @@ namespace GigHub.Controllers.Api
         public IHttpActionResult Follow(FollowingDto dto)
         {
             var userId = User.Identity.GetUserId();
-            if (_iUnitOfWork.Followings.AnyFollowing(userId, dto.FolloweeId))
-                return BadRequest("Already following.");
+            var following = _iUnitOfWork.Followings.GetFollowing(userId, dto.FolloweeId);
 
-
-            var following = new Following
+            if (following != null)
+            {
+                return BadRequest("Following already exists");
+            }
+            following = new Following
             {
                 FollowerId = userId,
                 FolloweeId = dto.FolloweeId

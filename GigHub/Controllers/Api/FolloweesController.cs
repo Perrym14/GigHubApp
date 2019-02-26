@@ -1,7 +1,6 @@
-﻿using GigHub.Persistence;
+﻿using GigHub.Core.Repositories;
 using Microsoft.AspNet.Identity;
 using System.Web.Mvc;
-using GigHub.Core.Repositories;
 
 namespace GigHub.Controllers.Api
 {
@@ -18,7 +17,7 @@ namespace GigHub.Controllers.Api
         {
             var userId = User.Identity.GetUserId();
 
-            var artists = _iUnitOfWork.Followings.GetFollowees(userId);
+            var artists = _iUnitOfWork.Users.GetArtistsFollowedBy(userId);
 
             return View(artists);
         }

@@ -6,7 +6,7 @@ using System.Web.Http;
 
 namespace GigHub.Controllers.Api
 {
-    [System.Web.Http.Authorize]
+    [Authorize]
     public class AttendancesController : ApiController
     {
         private readonly IUnitOfWork _iUnitOfWork;
@@ -15,6 +15,7 @@ namespace GigHub.Controllers.Api
         {
             _iUnitOfWork = unitOfWork;
         }
+
 
         [HttpPost]
         public IHttpActionResult Attend(AttendanceDto dto)

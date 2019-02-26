@@ -31,7 +31,7 @@ namespace GigHub.Core.Models
             Notification = notification;
         }
 
-        public void MarkRead()
+        public void Read()
         {
             IsRead = true;
         }

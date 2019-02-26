@@ -39,11 +39,6 @@ namespace GigHub.Persistence.Repositories
             _context.Attendances.Remove(attendance);
         }
 
-        public bool AnyAttendances(string userId, int gigId)
-        {
-            return _context.Attendances
-                .Any(a => a.AttendeeId == userId && a.GigId == gigId);
-        }
 
 
     }
